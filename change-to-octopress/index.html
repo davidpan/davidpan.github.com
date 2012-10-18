@@ -5,12 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>change to Octopress - DaviPan Blog</title>
+  <title>切换到Octopress - DaviPan Blog</title>
   <meta name="author" content="David Pan">
 
   
-  <meta name="description" content="
-">
+  <meta name="description" content="原因 Octopress是基于Jekyll形成的一套Blog框架,增加了很多方便的功能.确实比原始的Jekyll方便不少. 于是就决定砍掉Jekyll,重新部署一下看看. Octopress部署 安装Git
+安装Ruby 1.9.3 (推荐使用RVM)
+更新gem到最新 配置本地Octopress &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,7 +81,7 @@
   
   <header>
     
-      <h1 class="entry-title">Change to Octopress</h1>
+      <h1 class="entry-title">切换到Octopress</h1>
     
     
       <p class="meta">
@@ -96,7 +97,7 @@
   
 
 
-<time datetime="2012-10-18T23:20:00+08:00" pubdate data-updated="true">Oct 18<span>th</span>, 2012</time>
+<time datetime="2012-10-18T23:20:00+00:00" pubdate data-updated="true">Oct 18<span>th</span>, 2012</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -105,7 +106,126 @@
   </header>
 
 
-<div class="entry-content">
+<div class="entry-content"><h3>原因</h3>
+
+<p>Octopress是基于Jekyll形成的一套Blog框架,增加了很多方便的功能.确实比原始的Jekyll方便不少.</p>
+
+<p>于是就决定砍掉Jekyll,重新部署一下看看.</p>
+
+<h3>Octopress部署</h3>
+
+<ul>
+<li>安装Git</li>
+<li>安装Ruby 1.9.3 (推荐使用RVM)</li>
+<li>更新gem到最新</li>
+</ul>
+
+
+<h4>配置本地Octopress</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/imathis/octopress.git davidpan.github.com
+</span><span class='line'>cd davidpan.github.com
+</span><span class='line'>gem install bundler
+</span><span class='line'>bundle install
+</span><span class='line'>rake install</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>部署到GitHub</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake setup_github_pages</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>只需要输入github上的仓库url即可</em></p>
+
+<h4>修改配置文件</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>nano _config.yml</span></code></pre></td></tr></table></div></figure>
+
+
+<p>基本和Jekyll的配置方式差不多,修改如下参数：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>url:
+</span><span class='line'>title:
+</span><span class='line'>subtitle:
+</span><span class='line'>author:
+</span><span class='line'>
+</span><span class='line'>root:
+</span><span class='line'>permalink:
+</span><span class='line'>
+</span><span class='line'>github_user:
+</span><span class='line'>twitter_user:
+</span><span class='line'>disqus_short_name:
+</span><span class='line'>google_analytics_tracking_id:</span></code></pre></td></tr></table></div></figure>
+
+
+<p>可以根据你自己的情况修改。</p>
+
+<h4>生成静态文件并部署</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake gen_deploy</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>本地测试</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake preview</span></code></pre></td></tr></table></div></figure>
+
+
+<p>和Jekyll一样访问 http://localhost:4000/</p>
+
+<h4>更新文章及发布</h4>
+
+<h5>新建文章</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["title name"]</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>新建页面</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_page["page name"]</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>生成并发布到GitHub</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake gen_deploy</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>查询所有rake参数</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake -T</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>延伸阅读</h4>
+
+<ol>
+<li><a href="http://octopress.org/docs/">Octopress官方文档(英文)</a></li>
+<li><a href="http://octopress.org/docs/plugins/">Octopress插件使用(英文)</a></li>
+</ol>
+
 </div>
 
 
@@ -128,8 +248,14 @@
   
 
 
-<time datetime="2012-10-18T23:20:00+08:00" pubdate data-updated="true">Oct 18<span>th</span>, 2012</time>
+<time datetime="2012-10-18T23:20:00+00:00" pubdate data-updated="true">Oct 18<span>th</span>, 2012</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/howto/'>Howto</a>
+  
+</span>
 
 
     </p>
@@ -145,7 +271,7 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/Howto/jekyll-bootstrap-setup/" title="Previous Post: jekyll bootstrap 配置">&laquo; jekyll bootstrap 配置</a>
+        <a class="basic-alignment left" href="/jekyll-bootstrap-setup/" title="Previous Post: jekyll bootstrap 配置">&laquo; jekyll bootstrap 配置</a>
       
       
     </p>
@@ -167,15 +293,15 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/change-to-octopress/">change to Octopress</a>
+        <a href="/change-to-octopress/">切换到Octopress</a>
       </li>
     
       <li class="post">
-        <a href="/Howto/jekyll-bootstrap-setup/">jekyll bootstrap 配置</a>
+        <a href="/jekyll-bootstrap-setup/">jekyll bootstrap 配置</a>
       </li>
     
       <li class="post">
-        <a href="/Howto/use-jekyll-on-github-deployment-blog/">使用Jekyll在GitHub上架设Blog</a>
+        <a href="/use-jekyll-on-github-deployment-blog/">使用Jekyll在GitHub上架设Blog</a>
       </li>
     
   </ul>

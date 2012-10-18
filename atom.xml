@@ -4,7 +4,7 @@
   <title><![CDATA[DaviPan Blog]]></title>
   <link href="http://davidpan.github.com/atom.xml" rel="self"/>
   <link href="http://davidpan.github.com/"/>
-  <updated>2012-10-18T23:22:11+08:00</updated>
+  <updated>2012-10-18T16:10:51+00:00</updated>
   <id>http://davidpan.github.com/</id>
   <author>
     <name><![CDATA[David Pan]]></name>
@@ -14,19 +14,138 @@
 
   
   <entry>
-    <title type="html"><![CDATA[change to Octopress]]></title>
+    <title type="html"><![CDATA[切换到Octopress]]></title>
     <link href="http://davidpan.github.com/change-to-octopress/"/>
-    <updated>2012-10-18T23:20:00+08:00</updated>
+    <updated>2012-10-18T23:20:00+00:00</updated>
     <id>http://davidpan.github.com/change-to-octopress</id>
-    <content type="html"><![CDATA[
+    <content type="html"><![CDATA[<h3>原因</h3>
+
+<p>Octopress是基于Jekyll形成的一套Blog框架,增加了很多方便的功能.确实比原始的Jekyll方便不少.</p>
+
+<p>于是就决定砍掉Jekyll,重新部署一下看看.</p>
+
+<h3>Octopress部署</h3>
+
+<ul>
+<li>安装Git</li>
+<li>安装Ruby 1.9.3 (推荐使用RVM)</li>
+<li>更新gem到最新</li>
+</ul>
+
+
+<h4>配置本地Octopress</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/imathis/octopress.git davidpan.github.com
+</span><span class='line'>cd davidpan.github.com
+</span><span class='line'>gem install bundler
+</span><span class='line'>bundle install
+</span><span class='line'>rake install</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>部署到GitHub</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake setup_github_pages</span></code></pre></td></tr></table></div></figure>
+
+
+<p><em>只需要输入github上的仓库url即可</em></p>
+
+<h4>修改配置文件</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>nano _config.yml</span></code></pre></td></tr></table></div></figure>
+
+
+<p>基本和Jekyll的配置方式差不多,修改如下参数：</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>url:
+</span><span class='line'>title:
+</span><span class='line'>subtitle:
+</span><span class='line'>author:
+</span><span class='line'>
+</span><span class='line'>root:
+</span><span class='line'>permalink:
+</span><span class='line'>
+</span><span class='line'>github_user:
+</span><span class='line'>twitter_user:
+</span><span class='line'>disqus_short_name:
+</span><span class='line'>google_analytics_tracking_id:</span></code></pre></td></tr></table></div></figure>
+
+
+<p>可以根据你自己的情况修改。</p>
+
+<h4>生成静态文件并部署</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake gen_deploy</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>本地测试</h4>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake preview</span></code></pre></td></tr></table></div></figure>
+
+
+<p>和Jekyll一样访问 http://localhost:4000/</p>
+
+<h4>更新文章及发布</h4>
+
+<h5>新建文章</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_post["title name"]</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>新建页面</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake new_page["page name"]</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>生成并发布到GitHub</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake gen_deploy</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>查询所有rake参数</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>rake -T</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>延伸阅读</h4>
+
+<ol>
+<li><a href="http://octopress.org/docs/">Octopress官方文档(英文)</a></li>
+<li><a href="http://octopress.org/docs/plugins/">Octopress插件使用(英文)</a></li>
+</ol>
+
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[jekyll bootstrap 配置]]></title>
-    <link href="http://davidpan.github.com/Howto/jekyll-bootstrap-setup/"/>
-    <updated>2012-10-18T22:03:00+08:00</updated>
-    <id>http://davidpan.github.com/Howto/jekyll-bootstrap-setup</id>
+    <link href="http://davidpan.github.com/jekyll-bootstrap-setup/"/>
+    <updated>2012-10-18T22:03:00+00:00</updated>
+    <id>http://davidpan.github.com/jekyll-bootstrap-setup</id>
     <content type="html"><![CDATA[<h2>1.修改配置</h2>
 
 <p>执行命令: nano _config.yml</p>
@@ -63,9 +182,9 @@
   
   <entry>
     <title type="html"><![CDATA[使用Jekyll在GitHub上架设Blog]]></title>
-    <link href="http://davidpan.github.com/Howto/use-jekyll-on-github-deployment-blog/"/>
-    <updated>2012-10-18T21:58:00+08:00</updated>
-    <id>http://davidpan.github.com/Howto/use-jekyll-on-github-deployment-blog</id>
+    <link href="http://davidpan.github.com/use-jekyll-on-github-deployment-blog/"/>
+    <updated>2012-10-18T21:58:00+00:00</updated>
+    <id>http://davidpan.github.com/use-jekyll-on-github-deployment-blog</id>
     <content type="html"><![CDATA[<p>GitHub很多朋友都知道，目前是做git托管最大的网站。详细介绍请看:<a href="https://github.com/about">关于Github</a>.</p>
 
 <p>Jekyll是ruby开发的静态页面解析器，可非常简单的用于blog的静态页面生成。</p>

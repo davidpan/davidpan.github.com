@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Howto | DaviPan Blog]]></title>
   <link href="http://davidpan.github.com/blog/categories/howto/atom.xml" rel="self"/>
   <link href="http://davidpan.github.com/"/>
-  <updated>2012-10-19T00:02:24+08:00</updated>
+  <updated>2012-10-18T16:10:51+00:00</updated>
   <id>http://davidpan.github.com/</id>
   <author>
     <name><![CDATA[David Pan]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[切换到Octopress]]></title>
     <link href="http://davidpan.github.com/change-to-octopress/"/>
-    <updated>2012-10-18T23:20:00+08:00</updated>
+    <updated>2012-10-18T23:20:00+00:00</updated>
     <id>http://davidpan.github.com/change-to-octopress</id>
     <content type="html"><![CDATA[<h3>原因</h3>
 
@@ -59,7 +59,7 @@ nano _config.yml
 
 <p>基本和Jekyll的配置方式差不多,修改如下参数：</p>
 
-<p>```[ruby] [_config.yml]
+<p>```
 url:
 title:
 subtitle:
@@ -118,15 +118,18 @@ rake -T
 
 <h4>延伸阅读</h4>
 
-<p>Octopress官方文档(英文)<a href="http://octopress.org/docs/">1</a>
-Octopress插件使用(英文)<a href="http://octopress.org/docs/plugins/">2</a></p>
+<ol>
+<li><a href="http://octopress.org/docs/">Octopress官方文档(英文)</a></li>
+<li><a href="http://octopress.org/docs/plugins/">Octopress插件使用(英文)</a></li>
+</ol>
+
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[jekyll bootstrap 配置]]></title>
     <link href="http://davidpan.github.com/jekyll-bootstrap-setup/"/>
-    <updated>2012-10-18T22:03:00+08:00</updated>
+    <updated>2012-10-18T22:03:00+00:00</updated>
     <id>http://davidpan.github.com/jekyll-bootstrap-setup</id>
     <content type="html"><![CDATA[<h2>1.修改配置</h2>
 
@@ -150,7 +153,7 @@ Octopress插件使用(英文)<a href="http://octopress.org/docs/plugins/">2</a><
 
 <ul>
 {\% for post in site.posts \%}
-<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+<li><span>Liquid error: undefined method `strftime' for nil:NilClass</span> &raquo; <a href=""></a></li>
 {\% endfor \%}
 </ul>
 
@@ -162,7 +165,7 @@ Octopress插件使用(英文)<a href="http://octopress.org/docs/plugins/">2</a><
   <entry>
     <title type="html"><![CDATA[使用Jekyll在GitHub上架设Blog]]></title>
     <link href="http://davidpan.github.com/use-jekyll-on-github-deployment-blog/"/>
-    <updated>2012-10-18T21:58:00+08:00</updated>
+    <updated>2012-10-18T21:58:00+00:00</updated>
     <id>http://davidpan.github.com/use-jekyll-on-github-deployment-blog</id>
     <content type="html"><![CDATA[<p>GitHub很多朋友都知道，目前是做git托管最大的网站。详细介绍请看:<a href="https://github.com/about">关于Github</a>.</p>
 
