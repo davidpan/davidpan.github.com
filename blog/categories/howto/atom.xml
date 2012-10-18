@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Howto | DaviPan Blog]]></title>
   <link href="http://davidpan.github.com/blog/categories/howto/atom.xml" rel="self"/>
   <link href="http://davidpan.github.com/"/>
-  <updated>2012-10-18T23:59:05+08:00</updated>
+  <updated>2012-10-19T00:02:24+08:00</updated>
   <id>http://davidpan.github.com/</id>
   <author>
     <name><![CDATA[David Pan]]></name>
@@ -59,7 +59,7 @@ nano _config.yml
 
 <p>基本和Jekyll的配置方式差不多,修改如下参数：</p>
 
-<p>```[ruby][_config.yml]
+<p>```[ruby] [_config.yml]
 url:
 title:
 subtitle:
@@ -76,7 +76,7 @@ google_analytics_tracking_id:
 
 <p>可以根据你自己的情况修改。</p>
 
-<h4>生成静态文件并拷贝到部署目录</h4>
+<h4>生成静态文件并部署</h4>
 
 <p><code>
 rake gen_deploy
@@ -108,7 +108,6 @@ rake new_page["page name"]
 
 <p><code>
 rake gen_deploy
-rake push
 </code></p>
 
 <h5>查询所有rake参数</h5>
