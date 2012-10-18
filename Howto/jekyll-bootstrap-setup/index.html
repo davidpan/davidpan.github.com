@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: GitHub - DaviPan Blog</title>
+  <title>jekyll bootstrap 配置 - DaviPan Blog</title>
   <meta name="author" content="David Pan">
 
   
-  <meta name="description" content="Category: GitHub">
+  <meta name="description" content="1.修改配置 执行命令: nano _config.yml 将permalink: /:categories/:year/:month/:day/:title/修改为permalink: /:categories/:title/。 将title修改为你的Blog名称, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://davidpan.github.comblog/categories/github/">
+  <link rel="canonical" href="http://davidpan.github.com/Howto/jekyll-bootstrap-setup/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -75,36 +75,125 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: GitHub</h1>
+    
+      <h1 class="entry-title">Jekyll Bootstrap 配置</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-18T22:03:00+08:00" pubdate data-updated="true">Oct 18<span>th</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><h2>1.修改配置</h2>
 
-  
-  <h2>2012</h2>
+<p>执行命令: nano _config.yml</p>
 
-<article>
-  
-<h1><a href="/use-jekyll-on-github-deployment-blog/">使用Jekyll在GitHub上架设Blog</a></h1>
-<time datetime="2012-10-18T21:58:00+08:00" pubdate><span class='month'>Oct</span> <span class='day'>18</span> <span class='year'>2012</span></time>
+<p>将permalink: /:categories/:year/:month/:day/:title/修改为permalink: /:categories/:title/。</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/github/'>GitHub</a>, <a class='category' href='/blog/categories/jekyll/'>Jekyll</a>, <a class='category' href='/blog/categories/jekyll-bootstrap/'>Jekyll Bootstrap</a>, <a class='category' href='/blog/categories/twitter-bootstrap/'>Twitter Bootstrap</a></span>
-</footer>
+<p>将title修改为你的Blog名称,production_url修改为你的github域名.</p>
+
+<p>去disqus注册帐号并新建站点,将设置的英文名放到 comments->disqus下的short_name.</p>
+
+<p>如果使用google分析,将你在google分析新加的站点的跟踪码放到analytics->google的tracking_id部分.</p>
+
+<h2>2.编辑首页</h2>
+
+<p>执行命令: nano index.md</p>
+
+<p>修改title部分为你的首页名称,将不需要的部分删除,只需 保留原来的</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;ul&gt;
+</span><span class='line'>{\% for post in site.posts \%}
+</span><span class='line'>&lt;li&gt;&lt;span&gt;Liquid error: undefined method `strftime' for nil:NilClass&lt;/span&gt; &raquo; &lt;a href=""&gt;&lt;/a&gt;&lt;/li&gt;
+</span><span class='line'>{\% endfor \%}
+</span><span class='line'>&lt;/ul&gt;</span></code></pre></td></tr></table></div></figure>
 
 
-</article>
 
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">David Pan</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-18T22:03:00+08:00" pubdate data-updated="true">Oct 18<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/howto/'>Howto</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://davidpan.github.com/Howto/jekyll-bootstrap-setup/" data-via="davidpanchina" data-counturl="http://davidpan.github.com/Howto/jekyll-bootstrap-setup/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/Howto/use-jekyll-on-github-deployment-blog/" title="Previous Post: 使用Jekyll在GitHub上架设Blog">&laquo; 使用Jekyll在GitHub上架设Blog</a>
+      
+      
+        <a class="basic-alignment right" href="/change-to-octopress/" title="Next Post: change to Octopress">change to Octopress &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -115,11 +204,15 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/jekyll-bootstrap-setup/">jekyll bootstrap 配置</a>
+        <a href="/change-to-octopress/">change to Octopress</a>
       </li>
     
       <li class="post">
-        <a href="/use-jekyll-on-github-deployment-blog/">使用Jekyll在GitHub上架设Blog</a>
+        <a href="/Howto/jekyll-bootstrap-setup/">jekyll bootstrap 配置</a>
+      </li>
+    
+      <li class="post">
+        <a href="/Howto/use-jekyll-on-github-deployment-blog/">使用Jekyll在GitHub上架设Blog</a>
       </li>
     
   </ul>
@@ -193,7 +286,10 @@
       var disqus_shortname = 'davidpangithubblog';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://davidpan.github.com/Howto/jekyll-bootstrap-setup/';
+        var disqus_url = 'http://davidpan.github.com/Howto/jekyll-bootstrap-setup/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

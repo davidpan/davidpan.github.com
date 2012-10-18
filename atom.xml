@@ -4,7 +4,7 @@
   <title><![CDATA[DaviPan Blog]]></title>
   <link href="http://davidpan.github.com/atom.xml" rel="self"/>
   <link href="http://davidpan.github.com/"/>
-  <updated>2012-10-18T22:36:54+08:00</updated>
+  <updated>2012-10-18T23:22:11+08:00</updated>
   <id>http://davidpan.github.com/</id>
   <author>
     <name><![CDATA[David Pan]]></name>
@@ -14,10 +14,19 @@
 
   
   <entry>
+    <title type="html"><![CDATA[change to Octopress]]></title>
+    <link href="http://davidpan.github.com/change-to-octopress/"/>
+    <updated>2012-10-18T23:20:00+08:00</updated>
+    <id>http://davidpan.github.com/change-to-octopress</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[jekyll bootstrap 配置]]></title>
-    <link href="http://davidpan.github.com/jekyll-bootstrap-setup/"/>
+    <link href="http://davidpan.github.com/Howto/jekyll-bootstrap-setup/"/>
     <updated>2012-10-18T22:03:00+08:00</updated>
-    <id>http://davidpan.github.com/jekyll-bootstrap-setup</id>
+    <id>http://davidpan.github.com/Howto/jekyll-bootstrap-setup</id>
     <content type="html"><![CDATA[<h2>1.修改配置</h2>
 
 <p>执行命令: nano _config.yml</p>
@@ -54,9 +63,9 @@
   
   <entry>
     <title type="html"><![CDATA[使用Jekyll在GitHub上架设Blog]]></title>
-    <link href="http://davidpan.github.com/use-jekyll-on-github-deployment-blog/"/>
+    <link href="http://davidpan.github.com/Howto/use-jekyll-on-github-deployment-blog/"/>
     <updated>2012-10-18T21:58:00+08:00</updated>
-    <id>http://davidpan.github.com/use-jekyll-on-github-deployment-blog</id>
+    <id>http://davidpan.github.com/Howto/use-jekyll-on-github-deployment-blog</id>
     <content type="html"><![CDATA[<p>GitHub很多朋友都知道，目前是做git托管最大的网站。详细介绍请看:<a href="https://github.com/about">关于Github</a>.</p>
 
 <p>Jekyll是ruby开发的静态页面解析器，可非常简单的用于blog的静态页面生成。</p>

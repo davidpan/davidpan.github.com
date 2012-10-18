@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Twitter Bootstrap | DaviPan Blog]]></title>
-  <link href="http://davidpan.github.com/blog/categories/twitter-bootstrap/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Howto | DaviPan Blog]]></title>
+  <link href="http://davidpan.github.com/blog/categories/howto/atom.xml" rel="self"/>
   <link href="http://davidpan.github.com/"/>
-  <updated>2012-10-18T22:36:54+08:00</updated>
+  <updated>2012-10-18T23:54:32+08:00</updated>
   <id>http://davidpan.github.com/</id>
   <author>
     <name><![CDATA[David Pan]]></name>
@@ -12,6 +12,153 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[切换到Octopress]]></title>
+    <link href="http://davidpan.github.com/change-to-octopress/"/>
+    <updated>2012-10-18T23:20:00+08:00</updated>
+    <id>http://davidpan.github.com/change-to-octopress</id>
+    <content type="html"><![CDATA[<h3>原因</h3>
+
+<p>Octopress是基于Jekyll形成的一套Blog框架,增加了很多方便的功能.确实比原始的Jekyll方便不少.</p>
+
+<p>于是就决定砍掉Jekyll,重新部署一下看看.</p>
+
+<h3>Octopress部署</h3>
+
+<ul>
+<li>安装Git</li>
+<li>安装Ruby 1.9.3 (推荐使用RVM)</li>
+<li>更新gem到最新</li>
+</ul>
+
+
+<h4>配置本地Octopress</h4>
+
+<p><code>
+git clone git://github.com/imathis/octopress.git davidpan.github.com
+cd davidpan.github.com
+gem install bundler
+bundle install
+rake install
+</code></p>
+
+<h4>部署到GitHub</h4>
+
+<p><code>
+rake setup_github_pages
+</code></p>
+
+<p><em>只需要输入github上的仓库url即可</em></p>
+
+<h4>修改配置文件</h4>
+
+<p><code>
+nano _config.yml
+</code></p>
+
+<p>基本和Jekyll的配置方式差不多,修改如下参数：</p>
+
+<p>```[ruby][_config.yml 基本修改内容]
+url:
+title:
+subtitle:
+author:</p>
+
+<p>root:
+permalink:</p>
+
+<p>github_user:
+twitter_user:
+disqus_short_name:
+google_analytics_tracking_id:
+```</p>
+
+<p>可以根据你自己的情况修改。</p>
+
+<h4>生成静态文件并拷贝到部署目录</h4>
+
+<p><code>
+rake gen_deploy
+</code></p>
+
+<h4>本地测试</h4>
+
+<p><code>
+rake preview
+</code></p>
+
+<p>和Jekyll一样访问 http://localhost:4000/</p>
+
+<h4>更新文章及发布</h4>
+
+<h5>新建文章</h5>
+
+<p><code>
+rake new_post["title name"]
+</code></p>
+
+<h5>新建页面</h5>
+
+<p><code>
+rake new_page["page name"]
+</code></p>
+
+<h5>生成并发布到GitHub</h5>
+
+<p><code>
+rake gen_deploy
+rake push
+</code></p>
+
+<h5>查询所有rake参数</h5>
+
+<p><code>
+rake -T
+</code></p>
+
+<h4>延伸阅读</h4>
+
+<p>Octopress官方文档(英文)<a href="http://octopress.org/docs/">1</a>
+Octopress插件使用(英文)<a href="http://octopress.org/docs/plugins/">2</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[jekyll bootstrap 配置]]></title>
+    <link href="http://davidpan.github.com/jekyll-bootstrap-setup/"/>
+    <updated>2012-10-18T22:03:00+08:00</updated>
+    <id>http://davidpan.github.com/jekyll-bootstrap-setup</id>
+    <content type="html"><![CDATA[<h2>1.修改配置</h2>
+
+<p>执行命令: nano _config.yml</p>
+
+<p>将permalink: /:categories/:year/:month/:day/:title/修改为permalink: /:categories/:title/。</p>
+
+<p>将title修改为你的Blog名称,production_url修改为你的github域名.</p>
+
+<p>去disqus注册帐号并新建站点,将设置的英文名放到 comments->disqus下的short_name.</p>
+
+<p>如果使用google分析,将你在google分析新加的站点的跟踪码放到analytics->google的tracking_id部分.</p>
+
+<h2>2.编辑首页</h2>
+
+<p>执行命令: nano index.md</p>
+
+<p>修改title部分为你的首页名称,将不需要的部分删除,只需 保留原来的</p>
+
+<p>```</p>
+
+<ul>
+{\% for post in site.posts \%}
+<li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+{\% endfor \%}
+</ul>
+
+
+<p>```</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[使用Jekyll在GitHub上架设Blog]]></title>

@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>使用Jekyll在GitHub上架设Blog - DaviPan Blog</title>
+  <title>change to Octopress - DaviPan Blog</title>
   <meta name="author" content="David Pan">
 
   
-  <meta name="description" content="GitHub很多朋友都知道，目前是做git托管最大的网站。详细介绍请看:关于Github. Jekyll是ruby开发的静态页面解析器，可非常简单的用于blog的静态页面生成。 1.建立GitHub账号 访问注册页面:Github免费注册页面 。输入用户名(英文+数字)、电子邮箱地址、设置密码( &hellip;">
+  <meta name="description" content="
+">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://davidpan.github.com/use-jekyll-on-github-deployment-blog/">
+  <link rel="canonical" href="http://davidpan.github.com/change-to-octopress/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -79,7 +80,7 @@
   
   <header>
     
-      <h1 class="entry-title">使用Jekyll在GitHub上架设Blog</h1>
+      <h1 class="entry-title">Change to Octopress</h1>
     
     
       <p class="meta">
@@ -95,7 +96,7 @@
   
 
 
-<time datetime="2012-10-18T21:58:00+08:00" pubdate data-updated="true">Oct 18<span>th</span>, 2012</time>
+<time datetime="2012-10-18T23:20:00+08:00" pubdate data-updated="true">Oct 18<span>th</span>, 2012</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -104,87 +105,7 @@
   </header>
 
 
-<div class="entry-content"><p>GitHub很多朋友都知道，目前是做git托管最大的网站。详细介绍请看:<a href="https://github.com/about">关于Github</a>.</p>
-
-<p>Jekyll是ruby开发的静态页面解析器，可非常简单的用于blog的静态页面生成。</p>
-
-<h2>1.建立GitHub账号</h2>
-
-<p>访问注册页面:<a href="https://github.com/signup/free">Github免费注册页面</a> 。输入用户名(英文+数字)、电子邮箱地址、设置密码(必须包含一个小写字母、一个数字，长度要7位及以上。)，点 $</p>
-
-<h2>2.新建仓库</h2>
-
-<p>注册后登陆GitHub，访问:<a href="https://github.com/new">Create a New Repo</a>建立新的仓库。仓库名称必须使用如下格式:你的用户名.github.com ,不要选中:Initialize this reposito$</p>
-
-<h2>3.安装GitHub客户端</h2>
-
-<p>Windows下建议安装<a href="http://windows.github.com/">GitHub For Windows</a>,其他平台可以直接安装Git客户端。</p>
-
-<h2>4.将Jekyll部署到GitHub</h2>
-
-<pre><code>    git clone https://github.com/plusjade/jekyll-bootstrap.git BLOGIT580.github.com
-    cd BLOGIT580.github.com
-    git remote set-url origin git@github.com:BLOGIT580/BLOGIT580.github.com.git
-    git push origin master
-</code></pre>
-
-<p><em>请将BLOGIT580，替换为你的用户名。</em></p>
-
-<p>十分钟后打开浏览器，访问BLOGIT580.github.com，就可以看到架设的Blog了。</p>
-
-<h2>5.Jekyll本地环境部署</h2>
-
-<p>ruby环境的搭建请参考: <a href="http://blog.it580.com/install-ruby-on-rails-on-ubuntu-12-04-1-lts">Ruby On Rails在Ubuntu 12.04.1 LTS下的安装</a></p>
-
-<p>执行命令:</p>
-
-<pre><code>  gem install jekyll
-    cd BLOGIT580.github.com
-    rake post title=”hello world ” #新建文章
-    rm –rf _post/core-samples/ #清理示例文章
-    jekyll –server
-</code></pre>
-
-<p><em>请将BLOGIT580，替换为你的用户名。</em></p>
-
-<p>打开浏览器，访问:http://localhost:4000 查看效果。</p>
-
-<h2>6.更新本地修改到GitHub</h2>
-
-<p>执行命令:</p>
-
-<pre><code>    cd BLOGIT580.github.com
-    rake post title=”hello world ” #新建文章
-    rm –rf _post/core-samples/ #清理示例文章
-    jekyll –server
-</code></pre>
-
-<p><em>请将BLOGIT580，替换为你的用户名。</em></p>
-
-<p>打开浏览器，访问:http://localhost:4000 查看效果。</p>
-
-<h2>6.更新本地修改到GitHub</h2>
-
-<p>执行命令:</p>
-
-<pre><code>    cd BLOGIT580.github.com
-    git add .
-    git commit –m “first commit”
-    git push
-</code></pre>
-
-<p><em>请将BLOGIT580，替换为你的用户名。</em></p>
-
-<p>执行完成后，本地所有修改将同步到远程服务器上。</p>
-
-<h3>其他建议阅读文档:</h3>
-
-<ul>
-<li> <a href="http://wowubuntu.com/markdown/">Markdown语法说明(简体版)</a></li>
-<li> <a href="http://jekyllbootstrap.com/lessons/jekyll-introduction.html">Jekyll介绍(英文)</a></li>
-<li> <a href="https://help.github.com/">GitHub帮助(英文)</a></li>
-</ul>
-
+<div class="entry-content">
 </div>
 
 
@@ -207,21 +128,15 @@
   
 
 
-<time datetime="2012-10-18T21:58:00+08:00" pubdate data-updated="true">Oct 18<span>th</span>, 2012</time>
+<time datetime="2012-10-18T23:20:00+08:00" pubdate data-updated="true">Oct 18<span>th</span>, 2012</time>
       
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/github/'>GitHub</a>, <a class='category' href='/blog/categories/jekyll/'>Jekyll</a>, <a class='category' href='/blog/categories/jekyll-bootstrap/'>Jekyll Bootstrap</a>, <a class='category' href='/blog/categories/twitter-bootstrap/'>Twitter Bootstrap</a>
-  
-</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://davidpan.github.com/use-jekyll-on-github-deployment-blog/" data-via="davidpanchina" data-counturl="http://davidpan.github.com/use-jekyll-on-github-deployment-blog/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://davidpan.github.com/change-to-octopress/" data-via="davidpanchina" data-counturl="http://davidpan.github.com/change-to-octopress/" >Tweet</a>
   
   
   
@@ -230,8 +145,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/Howto/jekyll-bootstrap-setup/" title="Previous Post: jekyll bootstrap 配置">&laquo; jekyll bootstrap 配置</a>
       
-        <a class="basic-alignment right" href="/jekyll-bootstrap-setup/" title="Next Post: jekyll bootstrap 配置">jekyll bootstrap 配置 &raquo;</a>
       
     </p>
   </footer>
@@ -252,11 +167,15 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/jekyll-bootstrap-setup/">jekyll bootstrap 配置</a>
+        <a href="/change-to-octopress/">change to Octopress</a>
       </li>
     
       <li class="post">
-        <a href="/use-jekyll-on-github-deployment-blog/">使用Jekyll在GitHub上架设Blog</a>
+        <a href="/Howto/jekyll-bootstrap-setup/">jekyll bootstrap 配置</a>
+      </li>
+    
+      <li class="post">
+        <a href="/Howto/use-jekyll-on-github-deployment-blog/">使用Jekyll在GitHub上架设Blog</a>
       </li>
     
   </ul>
@@ -331,8 +250,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://davidpan.github.com/use-jekyll-on-github-deployment-blog/';
-        var disqus_url = 'http://davidpan.github.com/use-jekyll-on-github-deployment-blog/';
+        var disqus_identifier = 'http://davidpan.github.com/change-to-octopress/';
+        var disqus_url = 'http://davidpan.github.com/change-to-octopress/';
         var disqus_script = 'embed.js';
       
     (function () {
