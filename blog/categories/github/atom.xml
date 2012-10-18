@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: GitHub | My Octopress Blog]]></title>
+  <title><![CDATA[Category: GitHub | DaviPan Blog]]></title>
   <link href="http://davidpan.github.com/blog/categories/github/atom.xml" rel="self"/>
   <link href="http://davidpan.github.com/"/>
-  <updated>2012-10-18T22:10:29+08:00</updated>
+  <updated>2012-10-18T22:36:54+08:00</updated>
   <id>http://davidpan.github.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[David Pan]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[使用Jekyll在GitHub上架设Blog]]></title>
-    <link href="http://davidpan.github.com/blog/2012/10/18/use-jekyll-on-github-deployment-blog/"/>
+    <link href="http://davidpan.github.com/use-jekyll-on-github-deployment-blog/"/>
     <updated>2012-10-18T21:58:00+08:00</updated>
-    <id>http://davidpan.github.com/blog/2012/10/18/use-jekyll-on-github-deployment-blog</id>
+    <id>http://davidpan.github.com/use-jekyll-on-github-deployment-blog</id>
     <content type="html"><![CDATA[<p>GitHub很多朋友都知道，目前是做git托管最大的网站。详细介绍请看:<a href="https://github.com/about">关于Github</a>.</p>
 
 <p>Jekyll是ruby开发的静态页面解析器，可非常简单的用于blog的静态页面生成。</p>

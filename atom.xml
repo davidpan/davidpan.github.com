@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
+  <title><![CDATA[DaviPan Blog]]></title>
   <link href="http://davidpan.github.com/atom.xml" rel="self"/>
   <link href="http://davidpan.github.com/"/>
-  <updated>2012-10-18T22:10:29+08:00</updated>
+  <updated>2012-10-18T22:36:54+08:00</updated>
   <id>http://davidpan.github.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[David Pan]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[jekyll bootstrap 配置]]></title>
-    <link href="http://davidpan.github.com/blog/2012/10/18/jekyll-bootstrap-setup/"/>
+    <link href="http://davidpan.github.com/jekyll-bootstrap-setup/"/>
     <updated>2012-10-18T22:03:00+08:00</updated>
-    <id>http://davidpan.github.com/blog/2012/10/18/jekyll-bootstrap-setup</id>
+    <id>http://davidpan.github.com/jekyll-bootstrap-setup</id>
     <content type="html"><![CDATA[<h2>1.修改配置</h2>
 
 <p>执行命令: nano _config.yml</p>
@@ -36,20 +36,27 @@
 
 <p>修改title部分为你的首页名称,将不需要的部分删除,只需 保留原来的</p>
 
-<pre><code>    &lt;ul&gt;
-    \{\% for post in site.posts \%\}
-    &lt;li&gt;&lt;span&gt;\{\{ post.date | date_to_string \}\}&lt;/span&gt; &amp;raquo; &lt;a href="\{\{ BASE_PATH \}\}\{\{ post.url \}\}"&gt;\{\{ post.title \}\}&lt;/a&gt;&lt;/li&gt;
-    \{\% endfor \%\}
-    &lt;/ul&gt;
-</code></pre>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;ul&gt;
+</span><span class='line'>{\% for post in site.posts \%}
+</span><span class='line'>&lt;li&gt;&lt;span&gt;Liquid error: undefined method `strftime' for nil:NilClass&lt;/span&gt; &raquo; &lt;a href=""&gt;&lt;/a&gt;&lt;/li&gt;
+</span><span class='line'>{\% endfor \%}
+</span><span class='line'>&lt;/ul&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[使用Jekyll在GitHub上架设Blog]]></title>
-    <link href="http://davidpan.github.com/blog/2012/10/18/use-jekyll-on-github-deployment-blog/"/>
+    <link href="http://davidpan.github.com/use-jekyll-on-github-deployment-blog/"/>
     <updated>2012-10-18T21:58:00+08:00</updated>
-    <id>http://davidpan.github.com/blog/2012/10/18/use-jekyll-on-github-deployment-blog</id>
+    <id>http://davidpan.github.com/use-jekyll-on-github-deployment-blog</id>
     <content type="html"><![CDATA[<p>GitHub很多朋友都知道，目前是做git托管最大的网站。详细介绍请看:<a href="https://github.com/about">关于Github</a>.</p>
 
 <p>Jekyll是ruby开发的静态页面解析器，可非常简单的用于blog的静态页面生成。</p>
