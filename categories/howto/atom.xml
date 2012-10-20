@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Howto | DavidPan Blog]]></title>
   <link href="http://davidpan.github.com/categories/howto/atom.xml" rel="self"/>
   <link href="http://davidpan.github.com/"/>
-  <updated>2012-10-20T23:40:54+00:00</updated>
+  <updated>2012-10-20T23:55:07+00:00</updated>
   <id>http://davidpan.github.com/</id>
   <author>
     <name><![CDATA[David Pan]]></name>
@@ -153,11 +153,11 @@ rake -T
 
 <ul>
 
-<li><span>18 Oct 2012</span> &raquo; <a href="/change-to-octopress/">切换到Octopress</a></li>
+<li><span>18 Oct 2012 </span> &raquo; <a href="/change-to-octopress/">切换到Octopress</a></li>
 
-<li><span>18 Oct 2012</span> &raquo; <a href="/jekyll-bootstrap-setup/">jekyll bootstrap 配置</a></li>
+<li><span>18 Oct 2012 </span> &raquo; <a href="/jekyll-bootstrap-setup/">jekyll bootstrap 配置</a></li>
 
-<li><span>18 Oct 2012</span> &raquo; <a href="/use-jekyll-on-github-deployment-blog/">使用Jekyll在GitHub上架设Blog</a></li>
+<li><span>18 Oct 2012 </span> &raquo; <a href="/use-jekyll-on-github-deployment-blog/">使用Jekyll在GitHub上架设Blog</a></li>
 
 </ul>
 
