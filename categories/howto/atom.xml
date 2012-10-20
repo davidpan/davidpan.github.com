@@ -2,9 +2,9 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Howto | DavidPan Blog]]></title>
-  <link href="http://davidpan.github.com/blog/categories/howto/atom.xml" rel="self"/>
+  <link href="http://davidpan.github.com/categories/howto/atom.xml" rel="self"/>
   <link href="http://davidpan.github.com/"/>
-  <updated>2012-10-19T06:38:57+00:00</updated>
+  <updated>2012-10-20T23:40:54+00:00</updated>
   <id>http://davidpan.github.com/</id>
   <author>
     <name><![CDATA[David Pan]]></name>
@@ -149,12 +149,16 @@ rake -T
 
 <p>修改title部分为你的首页名称,将不需要的部分删除,只需 保留原来的</p>
 
-<p>```</p>
+<p>``` ruby</p>
 
 <ul>
-{\% for post in site.posts \%}
-<li><span>Liquid error: undefined method `strftime' for nil:NilClass</span> &raquo; <a href=""></a></li>
-{\% endfor \%}
+
+<li><span>18 Oct 2012</span> &raquo; <a href="/change-to-octopress/">切换到Octopress</a></li>
+
+<li><span>18 Oct 2012</span> &raquo; <a href="/jekyll-bootstrap-setup/">jekyll bootstrap 配置</a></li>
+
+<li><span>18 Oct 2012</span> &raquo; <a href="/use-jekyll-on-github-deployment-blog/">使用Jekyll在GitHub上架设Blog</a></li>
+
 </ul>
 
 
