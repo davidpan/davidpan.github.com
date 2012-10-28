@@ -9,9 +9,7 @@
   <meta name="author" content="David Pan">
 
   
-  <meta name="description" content="原因 Octopress是基于Jekyll形成的一套Blog框架,增加了很多方便的功能.确实比原始的Jekyll方便不少. 于是就决定砍掉Jekyll,重新部署一下看看. Octopress部署 安装Git
-安装Ruby 1.9.3 (推荐使用RVM)
-更新gem到最新 配置本地Octopress &hellip;">
+  <meta name="description" content="1、无国外VPS等资源 大部分人都属于这类用户,幸好有些免费服务可以供使用。 Goagent Goagent下载地址 下载后解压缩到任意目录。 部署说明 申请Google App Engine 使用Google帐号，即可申请。 Create Application Application &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -84,6 +82,129 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/climb-the-great-wall/">翻越长城需要使用的工具</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-28T17:01:00+08:00" pubdate data-updated="true">Oct 28<span>th</span>, 2012</time>
+        
+         | <a href="/climb-the-great-wall/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>1、无国外VPS等资源</h2>
+
+<p>大部分人都属于这类用户,幸好有些免费服务可以供使用。</p>
+
+<h3>Goagent</h3>
+
+<p><a href="http://goo.gl/sxgfB">Goagent下载地址</a></p>
+
+<p>下载后解压缩到任意目录。</p>
+
+<h4>部署说明</h4>
+
+<ul>
+<li><a href="http://appengine.google.com/">申请Google App Engine</a></li>
+</ul>
+
+
+<p>使用Google帐号，即可申请。</p>
+
+<ul>
+<li><a href="https://appengine.google.com/start/createapp">Create Application</a></li>
+</ul>
+
+
+<p>Application Identifler输入6-10位随机数字加英文字母(例如:800gfw)，同时复制到Application Title，其他部分使用默认即可。点击Create Application，就建立成功了。appid就是刚才你输入的6-10位随机数字加英文，请记录下来。</p>
+
+<ul>
+<li>配置goagent</li>
+</ul>
+
+
+<p>打开已经解压缩的goagent目录，找到local\proxy.ini并打开。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[gae]
+</span><span class='line'>appid=800gfw #请修改为你设置的appid</span></code></pre></td></tr></table></div></figure>
+
+
+<p>保存该文件</p>
+
+<ul>
+<li>部署goagent到GAE</li>
+</ul>
+
+
+<p>打开已经解压缩的goagent目录，双击server\uploader.bat,将提示你输入appid，然后再输入你的Google帐号和密码，直到提示你部署完成。</p>
+
+<ul>
+<li>运行本地代理</li>
+</ul>
+
+
+<p>打开已经解压缩的goagent目录，双击local\proxy.exe 将开始运行本地代理。如果你希望以后每次开机就运行该程序，请双击local\addto-startup.vbs 。</p>
+
+<ul>
+<li>浏览器配置</li>
+</ul>
+
+
+<p>建议使用Chrome浏览器，安装SwitchySharp插件，安装完成后导入:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>https://goagent.googlecode.com/files/SwitchyOptions.bak</span></code></pre></td></tr></table></div></figure>
+
+
+<p>导入成功后，到SwitchySharp选项的切换规则的在线规则列表部分，点击&#8217;立即更新列表&#8217;。然后将SwitchSharp设置为自动切换模式。即可正常使用。</p>
+
+<ul>
+<li>安全考量</li>
+</ul>
+
+
+<p>建议安装KB SSL Enforcer插件，并在GAE上启用密码连接。</p>
+
+<h2>2、有国外VPS等资源</h2>
+
+<h3>SSH 隧道</h3>
+
+<p>需要有SSH帐号，建议使用<a href="http://www.bitvise.com/tunnelier">Bitvise SSH Client</a>作为客户端工具。</p>
+
+<p>在Chrome可以同样使用SwitchySharp插件，在Firefox使用FoxyProxy插件。</p>
+
+<h3>PPTP等VPN</h3>
+
+<p>请参见<a href="http://blog.it580.com/debian-linux-pptp-vpn%e5%ae%89%e8%a3%85%e8%ae%be%e7%bd%aelinode-vps">Debian Linux PPTP VPN安装设置(Linode VPS)</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/change-to-octopress/">切换到Octopress</a></h1>
     
     
@@ -100,7 +221,7 @@
   
 
 
-<time datetime="2012-10-18T23:20:00+00:00" pubdate data-updated="true">Oct 18<span>th</span>, 2012</time>
+<time datetime="2012-10-18T23:20:00+08:00" pubdate data-updated="true">Oct 18<span>th</span>, 2012</time>
         
          | <a href="/change-to-octopress/#disqus_thread">Comments</a>
         
@@ -257,7 +378,7 @@
   
 
 
-<time datetime="2012-10-18T22:03:00+00:00" pubdate data-updated="true">Oct 18<span>th</span>, 2012</time>
+<time datetime="2012-10-18T22:03:00+08:00" pubdate data-updated="true">Oct 18<span>th</span>, 2012</time>
         
          | <a href="/jekyll-bootstrap-setup/#disqus_thread">Comments</a>
         
@@ -268,9 +389,23 @@
 
   <div class="entry-content"><h2>1.修改配置</h2>
 
-<p>执行命令: nano _config.yml</p>
+<p>执行命令:</p>
 
-<p>将permalink: /:categories/:year/:month/:day/:title/修改为permalink: /:categories/:title/。</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>nano _config.yml</span></code></pre></td></tr></table></div></figure>
+
+
+<p>将</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>permalink: /:categories/:year/:month/:day/:title/</span></code></pre></td></tr></table></div></figure>
+
+
+<p>修改为</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>permalink: /:categories/:title/</span></code></pre></td></tr></table></div></figure>
+
 
 <p>将title修改为你的Blog名称,production_url修改为你的github域名.</p>
 
@@ -326,7 +461,7 @@
   
 
 
-<time datetime="2012-10-18T21:58:00+00:00" pubdate data-updated="true">Oct 18<span>th</span>, 2012</time>
+<time datetime="2012-10-18T21:58:00+08:00" pubdate data-updated="true">Oct 18<span>th</span>, 2012</time>
         
          | <a href="/use-jekyll-on-github-deployment-blog/#disqus_thread">Comments</a>
         
@@ -434,6 +569,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/climb-the-great-wall/">翻越长城需要使用的工具</a>
+      </li>
     
       <li class="post">
         <a href="/change-to-octopress/">切换到Octopress</a>

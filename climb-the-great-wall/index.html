@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>使用Jekyll在GitHub上架设Blog - DavidPan Blog</title>
+  <title>翻越长城需要使用的工具 - DavidPan Blog</title>
   <meta name="author" content="David Pan">
 
   
-  <meta name="description" content="GitHub很多朋友都知道，目前是做git托管最大的网站。详细介绍请看:关于Github. Jekyll是ruby开发的静态页面解析器，可非常简单的用于blog的静态页面生成。 1.建立GitHub账号 访问注册页面:Github免费注册页面 。输入用户名(英文+数字)、电子邮箱地址、设置密码( &hellip;">
+  <meta name="description" content="1、无国外VPS等资源 大部分人都属于这类用户,幸好有些免费服务可以供使用。 Goagent Goagent下载地址 下载后解压缩到任意目录。 部署说明 申请Google App Engine 使用Google帐号，即可申请。 Create Application Application &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://davidpan.github.com/use-jekyll-on-github-deployment-blog/">
+  <link rel="canonical" href="http://davidpan.github.com/climb-the-great-wall/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -79,7 +79,7 @@
   
   <header>
     
-      <h1 class="entry-title">使用Jekyll在GitHub上架设Blog</h1>
+      <h1 class="entry-title">翻越长城需要使用的工具</h1>
     
     
       <p class="meta">
@@ -95,7 +95,7 @@
   
 
 
-<time datetime="2012-10-18T21:58:00+08:00" pubdate data-updated="true">Oct 18<span>th</span>, 2012</time>
+<time datetime="2012-10-28T17:01:00+08:00" pubdate data-updated="true">Oct 28<span>th</span>, 2012</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -104,87 +104,92 @@
   </header>
 
 
-<div class="entry-content"><p>GitHub很多朋友都知道，目前是做git托管最大的网站。详细介绍请看:<a href="https://github.com/about">关于Github</a>.</p>
+<div class="entry-content"><h2>1、无国外VPS等资源</h2>
 
-<p>Jekyll是ruby开发的静态页面解析器，可非常简单的用于blog的静态页面生成。</p>
+<p>大部分人都属于这类用户,幸好有些免费服务可以供使用。</p>
 
-<h2>1.建立GitHub账号</h2>
+<h3>Goagent</h3>
 
-<p>访问注册页面:<a href="https://github.com/signup/free">Github免费注册页面</a> 。输入用户名(英文+数字)、电子邮箱地址、设置密码(必须包含一个小写字母、一个数字，长度要7位及以上。)，点 $</p>
+<p><a href="http://goo.gl/sxgfB">Goagent下载地址</a></p>
 
-<h2>2.新建仓库</h2>
+<p>下载后解压缩到任意目录。</p>
 
-<p>注册后登陆GitHub，访问:<a href="https://github.com/new">Create a New Repo</a>建立新的仓库。仓库名称必须使用如下格式:你的用户名.github.com ,不要选中:Initialize this reposito$</p>
-
-<h2>3.安装GitHub客户端</h2>
-
-<p>Windows下建议安装<a href="http://windows.github.com/">GitHub For Windows</a>,其他平台可以直接安装Git客户端。</p>
-
-<h2>4.将Jekyll部署到GitHub</h2>
-
-<pre><code>    git clone https://github.com/plusjade/jekyll-bootstrap.git BLOGIT580.github.com
-    cd BLOGIT580.github.com
-    git remote set-url origin git@github.com:BLOGIT580/BLOGIT580.github.com.git
-    git push origin master
-</code></pre>
-
-<p><em>请将BLOGIT580，替换为你的用户名。</em></p>
-
-<p>十分钟后打开浏览器，访问BLOGIT580.github.com，就可以看到架设的Blog了。</p>
-
-<h2>5.Jekyll本地环境部署</h2>
-
-<p>ruby环境的搭建请参考: <a href="http://blog.it580.com/install-ruby-on-rails-on-ubuntu-12-04-1-lts">Ruby On Rails在Ubuntu 12.04.1 LTS下的安装</a></p>
-
-<p>执行命令:</p>
-
-<pre><code>  gem install jekyll
-    cd BLOGIT580.github.com
-    rake post title=”hello world ” #新建文章
-    rm –rf _post/core-samples/ #清理示例文章
-    jekyll –server
-</code></pre>
-
-<p><em>请将BLOGIT580，替换为你的用户名。</em></p>
-
-<p>打开浏览器，访问:http://localhost:4000 查看效果。</p>
-
-<h2>6.基本清理和新建文章测试</h2>
-
-<p>执行命令:</p>
-
-<pre><code>    cd BLOGIT580.github.com
-    rake post title=”hello world ” #新建文章
-    rm –rf _post/core-samples/ #清理示例文章
-    jekyll –server
-</code></pre>
-
-<p><em>请将BLOGIT580，替换为你的用户名。</em></p>
-
-<p>打开浏览器，访问:http://localhost:4000 查看效果。</p>
-
-<h2>7.更新本地修改到GitHub</h2>
-
-<p>执行命令:</p>
-
-<pre><code>    cd BLOGIT580.github.com
-    git add .
-    git commit –m “first commit”
-    git push
-</code></pre>
-
-<p><em>请将BLOGIT580，替换为你的用户名。</em></p>
-
-<p>执行完成后，本地所有修改将同步到远程服务器上。</p>
-
-<h3>其他建议阅读文档:</h3>
+<h4>部署说明</h4>
 
 <ul>
-<li> <a href="http://wowubuntu.com/markdown/">Markdown语法说明(简体版)</a></li>
-<li> <a href="http://jekyllbootstrap.com/lessons/jekyll-introduction.html">Jekyll介绍(英文)</a></li>
-<li> <a href="https://help.github.com/">GitHub帮助(英文)</a></li>
+<li><a href="http://appengine.google.com/">申请Google App Engine</a></li>
 </ul>
 
+
+<p>使用Google帐号，即可申请。</p>
+
+<ul>
+<li><a href="https://appengine.google.com/start/createapp">Create Application</a></li>
+</ul>
+
+
+<p>Application Identifler输入6-10位随机数字加英文字母(例如:800gfw)，同时复制到Application Title，其他部分使用默认即可。点击Create Application，就建立成功了。appid就是刚才你输入的6-10位随机数字加英文，请记录下来。</p>
+
+<ul>
+<li>配置goagent</li>
+</ul>
+
+
+<p>打开已经解压缩的goagent目录，找到local\proxy.ini并打开。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[gae]
+</span><span class='line'>appid=800gfw #请修改为你设置的appid</span></code></pre></td></tr></table></div></figure>
+
+
+<p>保存该文件</p>
+
+<ul>
+<li>部署goagent到GAE</li>
+</ul>
+
+
+<p>打开已经解压缩的goagent目录，双击server\uploader.bat,将提示你输入appid，然后再输入你的Google帐号和密码，直到提示你部署完成。</p>
+
+<ul>
+<li>运行本地代理</li>
+</ul>
+
+
+<p>打开已经解压缩的goagent目录，双击local\proxy.exe 将开始运行本地代理。如果你希望以后每次开机就运行该程序，请双击local\addto-startup.vbs 。</p>
+
+<ul>
+<li>浏览器配置</li>
+</ul>
+
+
+<p>建议使用Chrome浏览器，安装SwitchySharp插件，安装完成后导入:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>https://goagent.googlecode.com/files/SwitchyOptions.bak</span></code></pre></td></tr></table></div></figure>
+
+
+<p>导入成功后，到SwitchySharp选项的切换规则的在线规则列表部分，点击&#8217;立即更新列表&#8217;。然后将SwitchSharp设置为自动切换模式。即可正常使用。</p>
+
+<ul>
+<li>安全考量</li>
+</ul>
+
+
+<p>建议安装KB SSL Enforcer插件，并在GAE上启用密码连接。</p>
+
+<h2>2、有国外VPS等资源</h2>
+
+<h3>SSH 隧道</h3>
+
+<p>需要有SSH帐号，建议使用<a href="http://www.bitvise.com/tunnelier">Bitvise SSH Client</a>作为客户端工具。</p>
+
+<p>在Chrome可以同样使用SwitchySharp插件，在Firefox使用FoxyProxy插件。</p>
+
+<h3>PPTP等VPN</h3>
+
+<p>请参见<a href="http://blog.it580.com/debian-linux-pptp-vpn%e5%ae%89%e8%a3%85%e8%ae%be%e7%bd%aelinode-vps">Debian Linux PPTP VPN安装设置(Linode VPS)</a></p>
 </div>
 
 
@@ -207,7 +212,7 @@
   
 
 
-<time datetime="2012-10-18T21:58:00+08:00" pubdate data-updated="true">Oct 18<span>th</span>, 2012</time>
+<time datetime="2012-10-28T17:01:00+08:00" pubdate data-updated="true">Oct 28<span>th</span>, 2012</time>
       
 
 <span class="categories">
@@ -228,8 +233,8 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/change-to-octopress/" title="Previous Post: 切换到Octopress">&laquo; 切换到Octopress</a>
       
-        <a class="basic-alignment right" href="/jekyll-bootstrap-setup/" title="Next Post: jekyll bootstrap 配置">jekyll bootstrap 配置 &raquo;</a>
       
     </p>
   </footer>
@@ -292,8 +297,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://davidpan.github.com/use-jekyll-on-github-deployment-blog/';
-        var disqus_url = 'http://davidpan.github.com/use-jekyll-on-github-deployment-blog/';
+        var disqus_identifier = 'http://davidpan.github.com/climb-the-great-wall/';
+        var disqus_url = 'http://davidpan.github.com/climb-the-great-wall/';
         var disqus_script = 'embed.js';
       
     (function () {

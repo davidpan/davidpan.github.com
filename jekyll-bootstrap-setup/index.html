@@ -9,7 +9,10 @@
   <meta name="author" content="David Pan">
 
   
-  <meta name="description" content="1.修改配置 执行命令: nano _config.yml 将permalink: /:categories/:year/:month/:day/:title/修改为permalink: /:categories/:title/。 将title修改为你的Blog名称, &hellip;">
+  <meta name="description" content="1.修改配置 执行命令: 1
+nano _config.yml 将 1
+permalink: /:categories/:year/:month/:day/:title/ 修改为 1
+permalink: /:categories/:title/ 将title修改为你的Blog名称, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -95,7 +98,7 @@
   
 
 
-<time datetime="2012-10-18T22:03:00+00:00" pubdate data-updated="true">Oct 18<span>th</span>, 2012</time>
+<time datetime="2012-10-18T22:03:00+08:00" pubdate data-updated="true">Oct 18<span>th</span>, 2012</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -106,9 +109,23 @@
 
 <div class="entry-content"><h2>1.修改配置</h2>
 
-<p>执行命令: nano _config.yml</p>
+<p>执行命令:</p>
 
-<p>将permalink: /:categories/:year/:month/:day/:title/修改为permalink: /:categories/:title/。</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>nano _config.yml</span></code></pre></td></tr></table></div></figure>
+
+
+<p>将</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>permalink: /:categories/:year/:month/:day/:title/</span></code></pre></td></tr></table></div></figure>
+
+
+<p>修改为</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>permalink: /:categories/:title/</span></code></pre></td></tr></table></div></figure>
+
 
 <p>将title修改为你的Blog名称,production_url修改为你的github域名.</p>
 
@@ -158,7 +175,7 @@
   
 
 
-<time datetime="2012-10-18T22:03:00+00:00" pubdate data-updated="true">Oct 18<span>th</span>, 2012</time>
+<time datetime="2012-10-18T22:03:00+08:00" pubdate data-updated="true">Oct 18<span>th</span>, 2012</time>
       
 
 <span class="categories">
@@ -201,6 +218,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/climb-the-great-wall/">翻越长城需要使用的工具</a>
+      </li>
     
       <li class="post">
         <a href="/change-to-octopress/">切换到Octopress</a>
