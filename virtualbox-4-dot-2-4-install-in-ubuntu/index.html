@@ -5,14 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - DavidPan Blog</title>
+  <title>Ubuntu 12.04/12.10下安装VirtualBox 4.2.4 - DavidPan Blog</title>
   <meta name="author" content="David Pan">
 
   
-  <meta name="description" content="Blog Archive 2012 Ubuntu 12.04/12.10下安装VirtualBox 4.2.4
-Oct 29 2012 posted in Howto 翻越长城需要使用的工具
-Oct 28 2012 posted in Howto 切换到Octopress
-Oct 18 2012 &hellip;">
+  <meta name="description" content="VirtualBox最近更新到了4.2.4版本，详细更新内容请访问:VirtualBox 4.2更新历史。
+本文将介绍在Ubuntu 12.04/12.10 下如何安装VirtualBox。 增加VirtualBox源 执行如下命令: 1
+sudo nano /etc/apt/sources. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +20,7 @@ Oct 18 2012 &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://davidpan.github.com/blog/archives/">
+  <link rel="canonical" href="http://davidpan.github.com/virtualbox-4-dot-2-4-install-in-ubuntu/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -78,92 +77,141 @@ Oct 18 2012 &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">Ubuntu 12.04/12.10下安装VirtualBox 4.2.4</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-29T18:42:00+08:00" pubdate data-updated="true">Oct 29<span>th</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><p>VirtualBox最近更新到了4.2.4版本，详细更新内容请访问:<a href="https://www.virtualbox.org/wiki/Changelog">VirtualBox 4.2更新历史</a>。
+本文将介绍在Ubuntu 12.04/12.10 下如何安装VirtualBox。</p>
 
-  
-  <h2>2012</h2>
+<h3>增加VirtualBox源</h3>
 
-<article>
-  
-<h1><a href="/virtualbox-4-dot-2-4-install-in-ubuntu/">Ubuntu 12.04/12.10下安装VirtualBox 4.2.4</a></h1>
-<time datetime="2012-10-29T18:42:00+08:00" pubdate><span class='month'>Oct</span> <span class='day'>29</span> <span class='year'>2012</span></time>
+<p>执行如下命令:</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/categories/howto/'>Howto</a></span>
-</footer>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo nano /etc/apt/sources.list</span></code></pre></td></tr></table></div></figure>
 
 
-</article>
+<p>在该文件加入以下内容:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>deb http://download.virtualbox.org/virtualbox/debian precise contrib</span></code></pre></td></tr></table></div></figure>
 
 
+<p>保存文件并退出nano。</p>
 
-<article>
-  
-<h1><a href="/climb-the-great-wall/">翻越长城需要使用的工具</a></h1>
-<time datetime="2012-10-28T17:01:00+08:00" pubdate><span class='month'>Oct</span> <span class='day'>28</span> <span class='year'>2012</span></time>
+<h3>key导入</h3>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/categories/howto/'>Howto</a></span>
-</footer>
+<p>执行如下命令:</p>
 
-
-</article>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | sudo apt-key add -</span></code></pre></td></tr></table></div></figure>
 
 
+<h3>刷新源</h3>
 
-<article>
-  
-<h1><a href="/change-to-octopress/">切换到Octopress</a></h1>
-<time datetime="2012-10-18T23:20:00+08:00" pubdate><span class='month'>Oct</span> <span class='day'>18</span> <span class='year'>2012</span></time>
+<p>执行如下命令:</p>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/categories/howto/'>Howto</a></span>
-</footer>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get update</span></code></pre></td></tr></table></div></figure>
 
 
-</article>
+<h3>安装VirtualBox</h3>
+
+<p>执行如下命令:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install virtualbox-4.2</span></code></pre></td></tr></table></div></figure>
 
 
+<p>执行完毕后就可以使用。</p>
 
-<article>
-  
-<h1><a href="/jekyll-bootstrap-setup/">jekyll bootstrap 配置</a></h1>
-<time datetime="2012-10-18T22:03:00+08:00" pubdate><span class='month'>Oct</span> <span class='day'>18</span> <span class='year'>2012</span></time>
+<h4>延伸阅读</h4>
 
-<footer>
-  <span class="categories">posted in <a class='category' href='/categories/howto/'>Howto</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/use-jekyll-on-github-deployment-blog/">使用Jekyll在GitHub上架设Blog</a></h1>
-<time datetime="2012-10-18T21:58:00+08:00" pubdate><span class='month'>Oct</span> <span class='day'>18</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/categories/howto/'>Howto</a></span>
-</footer>
-
-
-</article>
+<ul>
+<li><a href="https://www.virtualbox.org/wiki/End-user_documentation">VirtualBox官方用户文档</a></li>
+</ul>
 
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">David Pan</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-10-29T18:42:00+08:00" pubdate data-updated="true">Oct 29<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/categories/howto/'>Howto</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/climb-the-great-wall/" title="Previous Post: 翻越长城需要使用的工具">&laquo; 翻越长城需要使用的工具</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -219,7 +267,10 @@ Oct 18 2012 &hellip;">
       var disqus_shortname = 'davidpangithubblog';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://davidpan.github.com/virtualbox-4-dot-2-4-install-in-ubuntu/';
+        var disqus_url = 'http://davidpan.github.com/virtualbox-4-dot-2-4-install-in-ubuntu/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

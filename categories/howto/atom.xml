@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Howto | DavidPan Blog]]></title>
   <link href="http://davidpan.github.com/categories/howto/atom.xml" rel="self"/>
   <link href="http://davidpan.github.com/"/>
-  <updated>2012-10-28T17:44:25+08:00</updated>
+  <updated>2012-10-29T18:53:54+08:00</updated>
   <id>http://davidpan.github.com/</id>
   <author>
     <name><![CDATA[David Pan]]></name>
@@ -12,6 +12,60 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ubuntu 12.04/12.10下安装VirtualBox 4.2.4]]></title>
+    <link href="http://davidpan.github.com/virtualbox-4-dot-2-4-install-in-ubuntu/"/>
+    <updated>2012-10-29T18:42:00+08:00</updated>
+    <id>http://davidpan.github.com/virtualbox-4-dot-2-4-install-in-ubuntu</id>
+    <content type="html"><![CDATA[<p>VirtualBox最近更新到了4.2.4版本，详细更新内容请访问:<a href="https://www.virtualbox.org/wiki/Changelog">VirtualBox 4.2更新历史</a>。
+本文将介绍在Ubuntu 12.04/12.10 下如何安装VirtualBox。</p>
+
+<h3>增加VirtualBox源</h3>
+
+<p>执行如下命令:
+<code>
+sudo nano /etc/apt/sources.list
+</code></p>
+
+<p>在该文件加入以下内容:
+<code>
+deb http://download.virtualbox.org/virtualbox/debian precise contrib
+</code></p>
+
+<p>保存文件并退出nano。</p>
+
+<h3>key导入</h3>
+
+<p>执行如下命令:
+<code>
+wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | sudo apt-key add -
+</code></p>
+
+<h3>刷新源</h3>
+
+<p>执行如下命令:
+<code>
+sudo apt-get update
+</code></p>
+
+<h3>安装VirtualBox</h3>
+
+<p>执行如下命令:
+<code>
+sudo apt-get install virtualbox-4.2
+</code></p>
+
+<p>执行完毕后就可以使用。</p>
+
+<h4>延伸阅读</h4>
+
+<ul>
+<li><a href="https://www.virtualbox.org/wiki/End-user_documentation">VirtualBox官方用户文档</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[翻越长城需要使用的工具]]></title>
@@ -254,6 +308,8 @@ permalink: /:categories/:title/
 <p>``` ruby</p>
 
 <ul>
+
+<li><span>29 Oct 2012 </span> &raquo; <a href="/virtualbox-4-dot-2-4-install-in-ubuntu/">Ubuntu 12.04/12.10下安装VirtualBox 4.2.4</a></li>
 
 <li><span>28 Oct 2012 </span> &raquo; <a href="/climb-the-great-wall/">翻越长城需要使用的工具</a></li>
 
