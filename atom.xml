@@ -4,7 +4,7 @@
   <title><![CDATA[DavidPan Blog]]></title>
   <link href="http://davidpan.github.com/atom.xml" rel="self"/>
   <link href="http://davidpan.github.com/"/>
-  <updated>2012-10-29T18:53:54+08:00</updated>
+  <updated>2012-11-02T02:23:28+08:00</updated>
   <id>http://davidpan.github.com/</id>
   <author>
     <name><![CDATA[David Pan]]></name>
@@ -12,6 +12,73 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[升级XCache到2.0.1]]></title>
+    <link href="http://davidpan.github.com/upgrade-xcache-to-2-dot-0-1/"/>
+    <updated>2012-11-02T02:14:00+08:00</updated>
+    <id>http://davidpan.github.com/upgrade-xcache-to-2-dot-0-1</id>
+    <content type="html"><![CDATA[<p>发现 XCache 7月份已经升级到<a href="https://xcache.lighttpd.net/wiki/Release-2.0.1">2.0.1</a>，10月份都发了<a href="https://xcache.lighttpd.net/wiki/Release-3.0.0">3.0.0</a>。根据XCache官方建议，还是安装稳定版本2.0.x。</p>
+
+<h4>下载</h4>
+
+<p>执行命令:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>wget https://xcache.lighttpd.net/pub/Releases/2.0.1/xcache-2.0.1.tar.gz</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>解压缩</h4>
+
+<p>执行命令:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>tar xzvf xcache-2.0.1.tar.gz</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>编译</h4>
+
+<p>执行命令:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>phpize --clean && phpize
+</span><span class='line'>./configure --enable-xcache
+</span><span class='line'>make
+</span><span class='line'>make test</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>安装</h4>
+
+<p>执行命令:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>make install</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>验证安装</h4>
+
+<p>执行命令:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>php -v</span></code></pre></td></tr></table></div></figure>
+
+
+<p>查看xcache部分是否已经是2.0.1版本。</p>
+
+<h4>重启服务</h4>
+
+<p>执行命令:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/etc/init.d/apache restart</span></code></pre></td></tr></table></div></figure>
+
+
+<p>完成。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Ubuntu 12.04/12.10下安装VirtualBox 4.2.4]]></title>

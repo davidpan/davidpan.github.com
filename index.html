@@ -9,9 +9,8 @@
   <meta name="author" content="David Pan">
 
   
-  <meta name="description" content="VirtualBox最近更新到了4.2.4版本，详细更新内容请访问:VirtualBox 4.2更新历史。
-本文将介绍在Ubuntu 12.04/12.10 下如何安装VirtualBox。 增加VirtualBox源 执行如下命令: 1
-sudo nano /etc/apt/sources. &hellip;">
+  <meta name="description" content="发现 XCache 7月份已经升级到2.0.1，10月份都发了3.0.0。根据XCache官方建议，还是安装稳定版本2.0.x。 下载 执行命令: 1
+wget https://xcache.lighttpd.net/pub/Releases/2.0.1/xcache-2.0.1.tar.gz &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +77,102 @@ sudo nano /etc/apt/sources. &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/upgrade-xcache-to-2-dot-0-1/">升级XCache到2.0.1</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-02T02:14:00+08:00" pubdate data-updated="true">Nov 2<span>nd</span>, 2012</time>
+        
+         | <a href="/upgrade-xcache-to-2-dot-0-1/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>发现 XCache 7月份已经升级到<a href="https://xcache.lighttpd.net/wiki/Release-2.0.1">2.0.1</a>，10月份都发了<a href="https://xcache.lighttpd.net/wiki/Release-3.0.0">3.0.0</a>。根据XCache官方建议，还是安装稳定版本2.0.x。</p>
+
+<h4>下载</h4>
+
+<p>执行命令:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>wget https://xcache.lighttpd.net/pub/Releases/2.0.1/xcache-2.0.1.tar.gz</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>解压缩</h4>
+
+<p>执行命令:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>tar xzvf xcache-2.0.1.tar.gz</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>编译</h4>
+
+<p>执行命令:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>phpize --clean && phpize
+</span><span class='line'>./configure --enable-xcache
+</span><span class='line'>make
+</span><span class='line'>make test</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>安装</h4>
+
+<p>执行命令:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>make install</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>验证安装</h4>
+
+<p>执行命令:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>php -v</span></code></pre></td></tr></table></div></figure>
+
+
+<p>查看xcache部分是否已经是2.0.1版本。</p>
+
+<h4>重启服务</h4>
+
+<p>执行命令:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/etc/init.d/apache restart</span></code></pre></td></tr></table></div></figure>
+
+
+<p>完成。</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -661,6 +756,10 @@ sudo nano /etc/apt/sources. &hellip;">
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/upgrade-xcache-to-2-dot-0-1/">升级XCache到2.0.1</a>
+      </li>
+    
+      <li class="post">
         <a href="/virtualbox-4-dot-2-4-install-in-ubuntu/">Ubuntu 12.04/12.10下安装VirtualBox 4.2.4</a>
       </li>
     
@@ -674,10 +773,6 @@ sudo nano /etc/apt/sources. &hellip;">
     
       <li class="post">
         <a href="/jekyll-bootstrap-setup/">jekyll bootstrap 配置</a>
-      </li>
-    
-      <li class="post">
-        <a href="/use-jekyll-on-github-deployment-blog/">使用Jekyll在GitHub上架设Blog</a>
       </li>
     
   </ul>

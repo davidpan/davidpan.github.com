@@ -5,13 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Ubuntu 12.04/12.10下安装VirtualBox 4.2.4 - DavidPan Blog</title>
+  <title>升级XCache到2.0.1 - DavidPan Blog</title>
   <meta name="author" content="David Pan">
 
   
-  <meta name="description" content="VirtualBox最近更新到了4.2.4版本，详细更新内容请访问:VirtualBox 4.2更新历史。
-本文将介绍在Ubuntu 12.04/12.10 下如何安装VirtualBox。 增加VirtualBox源 执行如下命令: 1
-sudo nano /etc/apt/sources. &hellip;">
+  <meta name="description" content="发现 XCache 7月份已经升级到2.0.1，10月份都发了3.0.0。根据XCache官方建议，还是安装稳定版本2.0.x。 下载 执行命令: 1
+wget https://xcache.lighttpd.net/pub/Releases/2.0.1/xcache-2.0.1.tar.gz &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -20,7 +19,7 @@ sudo nano /etc/apt/sources. &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://davidpan.github.com/virtualbox-4-dot-2-4-install-in-ubuntu/">
+  <link rel="canonical" href="http://davidpan.github.com/upgrade-xcache-to-2-dot-0-1/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -81,7 +80,7 @@ sudo nano /etc/apt/sources. &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Ubuntu 12.04/12.10下安装VirtualBox 4.2.4</h1>
+      <h1 class="entry-title">升级XCache到2.0.1</h1>
     
     
       <p class="meta">
@@ -97,7 +96,7 @@ sudo nano /etc/apt/sources. &hellip;">
   
 
 
-<time datetime="2012-10-29T18:42:00+08:00" pubdate data-updated="true">Oct 29<span>th</span>, 2012</time>
+<time datetime="2012-11-02T02:14:00+08:00" pubdate data-updated="true">Nov 2<span>nd</span>, 2012</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -106,57 +105,65 @@ sudo nano /etc/apt/sources. &hellip;">
   </header>
 
 
-<div class="entry-content"><p>VirtualBox最近更新到了4.2.4版本，详细更新内容请访问:<a href="https://www.virtualbox.org/wiki/Changelog">VirtualBox 4.2更新历史</a>。
-本文将介绍在Ubuntu 12.04/12.10 下如何安装VirtualBox。</p>
+<div class="entry-content"><p>发现 XCache 7月份已经升级到<a href="https://xcache.lighttpd.net/wiki/Release-2.0.1">2.0.1</a>，10月份都发了<a href="https://xcache.lighttpd.net/wiki/Release-3.0.0">3.0.0</a>。根据XCache官方建议，还是安装稳定版本2.0.x。</p>
 
-<h3>增加VirtualBox源</h3>
+<h4>下载</h4>
 
-<p>执行如下命令:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo nano /etc/apt/sources.list</span></code></pre></td></tr></table></div></figure>
-
-
-<p>在该文件加入以下内容:</p>
+<p>执行命令:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>deb http://download.virtualbox.org/virtualbox/debian precise contrib</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>wget https://xcache.lighttpd.net/pub/Releases/2.0.1/xcache-2.0.1.tar.gz</span></code></pre></td></tr></table></div></figure>
 
 
-<p>保存文件并退出nano。</p>
+<h4>解压缩</h4>
 
-<h3>key导入</h3>
-
-<p>执行如下命令:</p>
+<p>执行命令:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- | sudo apt-key add -</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>tar xzvf xcache-2.0.1.tar.gz</span></code></pre></td></tr></table></div></figure>
 
 
-<h3>刷新源</h3>
+<h4>编译</h4>
 
-<p>执行如下命令:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get update</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>安装VirtualBox</h3>
-
-<p>执行如下命令:</p>
+<p>执行命令:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install virtualbox-4.2</span></code></pre></td></tr></table></div></figure>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>phpize --clean && phpize
+</span><span class='line'>./configure --enable-xcache
+</span><span class='line'>make
+</span><span class='line'>make test</span></code></pre></td></tr></table></div></figure>
 
 
-<p>执行完毕后就可以使用。</p>
+<h4>安装</h4>
 
-<h4>延伸阅读</h4>
+<p>执行命令:</p>
 
-<ul>
-<li><a href="https://www.virtualbox.org/wiki/End-user_documentation">VirtualBox官方用户文档</a></li>
-</ul>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>make install</span></code></pre></td></tr></table></div></figure>
 
+
+<h4>验证安装</h4>
+
+<p>执行命令:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>php -v</span></code></pre></td></tr></table></div></figure>
+
+
+<p>查看xcache部分是否已经是2.0.1版本。</p>
+
+<h4>重启服务</h4>
+
+<p>执行命令:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>/etc/init.d/apache restart</span></code></pre></td></tr></table></div></figure>
+
+
+<p>完成。</p>
 </div>
 
 
@@ -179,7 +186,7 @@ sudo nano /etc/apt/sources. &hellip;">
   
 
 
-<time datetime="2012-10-29T18:42:00+08:00" pubdate data-updated="true">Oct 29<span>th</span>, 2012</time>
+<time datetime="2012-11-02T02:14:00+08:00" pubdate data-updated="true">Nov 2<span>nd</span>, 2012</time>
       
 
 <span class="categories">
@@ -200,10 +207,8 @@ sudo nano /etc/apt/sources. &hellip;">
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/climb-the-great-wall/" title="Previous Post: 翻越长城需要使用的工具">&laquo; 翻越长城需要使用的工具</a>
+        <a class="basic-alignment left" href="/virtualbox-4-dot-2-4-install-in-ubuntu/" title="Previous Post: Ubuntu 12.04/12.10下安装VirtualBox 4.2.4">&laquo; Ubuntu 12.04/12.10下安装VirtualBox 4.2.4</a>
       
-      
-        <a class="basic-alignment right" href="/upgrade-xcache-to-2-dot-0-1/" title="Next Post: 升级XCache到2.0.1">升级XCache到2.0.1 &raquo;</a>
       
     </p>
   </footer>
@@ -270,8 +275,8 @@ sudo nano /etc/apt/sources. &hellip;">
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://davidpan.github.com/virtualbox-4-dot-2-4-install-in-ubuntu/';
-        var disqus_url = 'http://davidpan.github.com/virtualbox-4-dot-2-4-install-in-ubuntu/';
+        var disqus_identifier = 'http://davidpan.github.com/upgrade-xcache-to-2-dot-0-1/';
+        var disqus_url = 'http://davidpan.github.com/upgrade-xcache-to-2-dot-0-1/';
         var disqus_script = 'embed.js';
       
     (function () {
