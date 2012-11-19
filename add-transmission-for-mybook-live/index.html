@@ -5,14 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>jekyll bootstrap 配置 - DavidPan Blog</title>
+  <title>为Mybook Live增加Transmission - DavidPan Blog</title>
   <meta name="author" content="David Pan">
 
   
-  <meta name="description" content="1.修改配置 执行命令: 1
-nano _config.yml 将 1
-permalink: /:categories/:year/:month/:day/:title/ 修改为 1
-permalink: /:categories/:title/ 将title修改为你的Blog名称, &hellip;">
+  <meta name="description" content="Mybook Live可以实现BT、PT下载功能，方便用户直接挂PT。 1.启动SSH服务 直接访问 http://localip/UI/ssh ,请将localip更换为你的Mybook Live IP地址.
+在显示的Web界面上选中Active. 2.安装FPM &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,7 +19,7 @@ permalink: /:categories/:title/ 将title修改为你的Blog名称, &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://davidpan.github.com/jekyll-bootstrap-setup/">
+  <link rel="canonical" href="http://davidpan.github.com/add-transmission-for-mybook-live/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -82,7 +80,7 @@ permalink: /:categories/:title/ 将title修改为你的Blog名称, &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Jekyll Bootstrap 配置</h1>
+      <h1 class="entry-title">为Mybook Live增加Transmission</h1>
     
     
       <p class="meta">
@@ -98,7 +96,7 @@ permalink: /:categories/:title/ 将title修改为你的Blog名称, &hellip;">
   
 
 
-<time datetime="2012-10-18T22:03:00+08:00" pubdate data-updated="true">Oct 18<span>th</span>, 2012</time>
+<time datetime="2012-11-19T16:11:00+08:00" pubdate data-updated="true">Nov 19<span>th</span>, 2012</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -107,52 +105,34 @@ permalink: /:categories/:title/ 将title修改为你的Blog名称, &hellip;">
   </header>
 
 
-<div class="entry-content"><h2>1.修改配置</h2>
+<div class="entry-content"><p>Mybook Live可以实现BT、PT下载功能，方便用户直接挂PT。</p>
 
-<p>执行命令:</p>
+<h3>1.启动SSH服务</h3>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>nano _config.yml</span></code></pre></td></tr></table></div></figure>
+<p>直接访问 http://localip/UI/ssh ,请将localip更换为你的Mybook Live IP地址.
+在显示的Web界面上选中Active.</p>
 
+<h3>2.安装FPM</h3>
 
-<p>将</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>permalink: /:categories/:year/:month/:day/:title/</span></code></pre></td></tr></table></div></figure>
-
-
-<p>修改为</p>
+<p>使用你习惯的SSH功能链接到你的Mybook Live IP地址，用户名是root，密码为welc0me。登录后记得修改密码。
+成功登录后执行如下命令：</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>permalink: /:categories/:title/</span></code></pre></td></tr></table></div></figure>
-
-
-<p>将title修改为你的Blog名称,production_url修改为你的github域名.</p>
-
-<p>去disqus注册帐号并新建站点,将设置的英文名放到 comments->disqus下的short_name.</p>
-
-<p>如果使用google分析,将你在google分析新加的站点的跟踪码放到analytics->google的tracking_id部分.</p>
-
-<h2>2.编辑首页</h2>
-
-<p>执行命令: nano index.md</p>
-
-<p>修改title部分为你的首页名称,将不需要的部分删除,只需 保留原来的</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
-</span><span class='line'><span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="n">post</span> <span class="k">in</span> <span class="n">site</span><span class="o">.</span><span class="n">posts</span> <span class="sx">%}</span>
-</span><span class='line'><span class="sx">&lt;li&gt;&lt;span&gt;{{ post.date | date_to_string  }</span><span class="p">}</span> <span class="o">&lt;</span><span class="sr">/span&gt; &amp;raquo; &lt;a href=&quot;{{ BASE_PATH }}{{ post.url }}&quot;&gt;{{ post.title }}&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;</span><span class="sr">/li&gt;</span>
-</span><span class='line'><span class="sr">{% endfor %}</span>
-</span><span class='line'><span class="sr">&lt;/u</span><span class="n">l</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd /root;
+</span><span class='line'>wget -q http://highlevelbits.free.fr/download-MBLIVE/fpinstaller/fpkmgr_install.sh -O /root/fpkmgr_install.sh;sh /root/fpkmgr_install.sh</span></code></pre></td></tr></table></div></figure>
 
 
+<p>该命令执行完成后，FPM已经安装到你的Mybook Live上了。</p>
 
+<h3>3.安装Transmission</h3>
+
+<p>直接访问 http://localip/fpkmgr ,请将localip更换为你的Mybook Live IP地址.密码同样为welc0me.
+然后访问 http://localip//fpkmgr/index.php?ACTION=FP_List , 你会看到Transmisson的选项，单击该行的install按钮，直到提示你安装成功。</p>
+
+<h3>4.Transmission基本使用</h3>
+
+<p>安装完成后，直接访问 http://localip:9091/ 就可以操作Transmission了。当然你也可以在你的电脑上安装Transmission Remote GUI来进行管理。</p>
 </div>
 
 
@@ -175,7 +155,7 @@ permalink: /:categories/:title/ 将title修改为你的Blog名称, &hellip;">
   
 
 
-<time datetime="2012-10-18T22:03:00+08:00" pubdate data-updated="true">Oct 18<span>th</span>, 2012</time>
+<time datetime="2012-11-19T16:11:00+08:00" pubdate data-updated="true">Nov 19<span>th</span>, 2012</time>
       
 
 <span class="categories">
@@ -196,10 +176,8 @@ permalink: /:categories/:title/ 将title修改为你的Blog名称, &hellip;">
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/use-jekyll-on-github-deployment-blog/" title="Previous Post: 使用Jekyll在GitHub上架设Blog">&laquo; 使用Jekyll在GitHub上架设Blog</a>
+        <a class="basic-alignment left" href="/upgrade-xcache-to-2-dot-0-1/" title="Previous Post: 升级XCache到2.0.1">&laquo; 升级XCache到2.0.1</a>
       
-      
-        <a class="basic-alignment right" href="/change-to-octopress/" title="Next Post: 切换到Octopress">切换到Octopress &raquo;</a>
       
     </p>
   </footer>
@@ -266,8 +244,8 @@ permalink: /:categories/:title/ 将title修改为你的Blog名称, &hellip;">
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://davidpan.github.com/jekyll-bootstrap-setup/';
-        var disqus_url = 'http://davidpan.github.com/jekyll-bootstrap-setup/';
+        var disqus_identifier = 'http://davidpan.github.com/add-transmission-for-mybook-live/';
+        var disqus_url = 'http://davidpan.github.com/add-transmission-for-mybook-live/';
         var disqus_script = 'embed.js';
       
     (function () {
